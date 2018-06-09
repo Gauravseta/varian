@@ -1,0 +1,54 @@
+
+html,body {
+    height:100%;
+}
+
+.header {
+    background: url('../assets/slider-bg.jpg') no-repeat top;
+    background-size: cover;
+    padding: 20px 0;
+    word-break: break-word;
+    color:white;
+
+    h1 {
+        font-weight:bold;
+    }
+}
+
+.body {
+    background-color:#f7f7f7;
+    word-break: break-all;
+    ul {
+        list-style-type: none;
+        padding-left: 0px;
+
+        li {
+            margin-top:10px;
+            border-radius:7px;
+            padding:18px;
+            background-color:white;
+            border: 1px solid #e8e5e5;
+            box-shadow: 1px 1px 9px 1px lightgrey;
+            i {
+                float: left;
+                font-size: 46px;
+                color:#4d1ca7;
+                padding-top:2px;
+            }
+
+            .article-texts {
+                padding-left: 57px;
+            }
+
+            .article-title {
+                    font-size: 18px;
+                    color: #3f3d59;
+                    font-weight: bold;
+            }
+            
+            .article-info {
+                color: #888888;
+            }
+        }
+    }
+}

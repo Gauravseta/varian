@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width">
+        <title>News</title>
+        <!-- build:css ./css/index.min.css -->
+        <link href="./app/css/index.css" rel="stylesheet" type="text/css">
+        <!--endbuild-->
+        <!-- build:css ./css/vendor.min.css -->
+        <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="./node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <!--endbuild-->
+    </head>
+    <body ng-app="mainApp" ng-controller="mainController">
+        <div class="header">
+            <div class="container">
+                <h1>Hacker News</h1>
+                <h3>Best Hacker News Articles</h3>
+            </div>
+        </div>
+        <div class="body">
+            <div class="container">
+                <ul uib-pagination
+                            ng-model="currentPage"
+                            total-items="totalArticles"
+                            items-per-page="itemsPerPage"
+                            max-size="maxSize" 
+                            boundary-links="true">
+                    </ul>
+                <div class="list">
+                    <ul>
+                        <li ng-repeat="article in articles.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+                            <i class="fa fa-newspaper-o"></i>
+                            <div class="article-texts">
+                                <div class="article-title">{{article.title}}</div>
+                                <div class="article-info">{{article.num_points}} by {{article.author}} | {{calculateTime(article.created_at)}}</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                    
+            </div>
+        </div>
+        <!-- build:js ./js/vendor.min.js -->
+        <script src="./node_modules/angular/angular.min.js"></script>
+        <script src="./node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+        <script src="./node_modules/moment/moment.js"></script>
+        <script src="./node_modules/angular-moment/angular-moment.min.js"></script>
+        <!--endbuild-->
+        <!-- build:js ./js/app.min.js -->
+        <script src="./app/js/app.js"></script>
+        <script src="./app/js/services/article.service.js"></script>
+        <!--endbuild-->
+    </body>
+    
+</html>

@@ -52,4 +52,8 @@ Mockup page is implemented as much as possible.
 
 1.UI Bootstraps library is behaving weirdly, few empty boxes are seen beside the pagination component.
 Though functionality is perfect.
+2. It is not recommended to include complex html code in index.html , ideally we should use ui-router and prepare a single state.But due to time constraint it has been missed.
 ======================================================================
+
+UI portfolio link:
+https://gauravsetaportfolio.herokuapp.com

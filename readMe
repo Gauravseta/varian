@@ -1,0 +1,55 @@
+===========================Varian Hacker News Front End================
+
+This project uses AngularJS, Bootstrap 3, UI-Bootstrap.
+Librares included and utilised are Moment,font-awesome,Express.
+Build tool used is Gulp.
+
+This app consists of single screen, which displays list of articles fetched dynamically.
+Screenshots folder is included at root level itself.
+
+=======================================================================
+
+
+========================Local Deployment===============================
+Note: It is assumed that Node is installed locally, if not installed kindly install it.
+
+To run the project locally for development purpose or viewing purpose
+Steps are: 
+
+1. In the Root directory, Run "npm install".
+2. Run "npm build:dev".
+
+This will automatically open the chrome browser and point at localhost:3000.
+
+========================================================================
+
+
+============================Production Deployment(If required)==========
+Also production ready "dist" folder can be built and can be deployed to production if required.
+Steps are: 
+
+1. Run "npm install".
+2. Run "npm build:prod".
+
+To generate production ready dist folder, gulp is used as build tool.
+=======================================================================
+
+
+===============================Features==========================
+Given the problem statement, following features are met.
+
+1.Minimum requirements are met.
+2.Search by name feature is completed, where IndexedDB is used to store data locally.
+3.Clicking on heading takes to the url in a new Tab.
+4.Autocomplete feature is added using indexedDB to store data.
+5.Pagination is included.
+
+Mockup page is implemented as much as possible.
+
+=====================================================================
+
+===========================Known issues================================
+
+1.UI Bootstraps library is behaving weirdly, few empty boxes are seen beside the pagination component.
+Though functionality is perfect.
+======================================================================

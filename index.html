@@ -17,29 +17,46 @@
             <div class="container">
                 <h1>Hacker News</h1>
                 <h3>Best Hacker News Articles</h3>
+                <div class="row">
+                    <div class="col-sm-8 search-box">
+                        <input type="text" class="input-box" placeholder="Search..." ng-model="txtArticle" ng-change="searchArticle(txtArticle)">
+                        <i class="fa fa-search btn-search align-center"></i>
+                        <div class="search-result-box" >
+                            <ul>
+                                <a href="{{result.url}}" target="_blank" ng-repeat="result in searchResults" class="search-item">{{result.title}}</a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <span>
+                            <i class="fa fa-filter filter-icon"></i>
+                            <span class="points-filter"><input type="checkbox" ng-change="sort(byPoints)" ng-model="byPoints">Points</span>
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="body">
             <div class="container">
+                
+                <div class="list">
+                    <ul>
+                        <li ng-repeat="article in articles.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+                            <i class="fa fa-newspaper-o"></i>
+                            <div class="article-texts">
+                                <a href="{{article.url}}" target="_blank" class="article-title">{{article.title}}</a>
+                                <div class="article-info">{{article.num_points}} points by {{article.author}} | {{calculateTime(article.created_at)}}</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
                 <ul uib-pagination
                             ng-model="currentPage"
                             total-items="totalArticles"
                             items-per-page="itemsPerPage"
                             max-size="maxSize" 
                             boundary-links="true">
-                    </ul>
-                <div class="list">
-                    <ul>
-                        <li ng-repeat="article in articles.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
-                            <i class="fa fa-newspaper-o"></i>
-                            <div class="article-texts">
-                                <div class="article-title">{{article.title}}</div>
-                                <div class="article-info">{{article.num_points}} by {{article.author}} | {{calculateTime(article.created_at)}}</div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                    
+                </ul>
             </div>
         </div>
         <!-- build:js ./js/vendor.min.js -->

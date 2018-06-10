@@ -17,7 +17,7 @@ To run the project locally for development purpose or viewing purpose
 Steps are: 
 
 1. In the Root directory, Run "npm install".
-2. Run "npm build:dev".
+2. Run "npm run build:dev".
 
 This will automatically open the chrome browser and point at localhost:3000.
 
@@ -29,7 +29,7 @@ Also production ready "dist" folder can be built and can be deployed to producti
 Steps are: 
 
 1. Run "npm install".
-2. Run "npm build:prod".
+2. Run "npm run build:prod".
 
 To generate production ready dist folder, gulp is used as build tool.
 =======================================================================
